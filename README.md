@@ -195,3 +195,22 @@ pip install -e .
 
 
 
+## git 代码
+
+### 标准版
+
+```
+cd vqgan-by-mzj
+git init
+git status
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+### 其他操作
+- `git remote set-url origin https://github.com/YMlinfeng/vqgan-by-mzj.git`
+- git remote -v
+- git branch
+- git branch -m master main 
+- git pull origin main --allow-unrelated-histories (拉取远程分支并强制合并)

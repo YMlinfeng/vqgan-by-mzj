@@ -1,5 +1,5 @@
-name: taming
-channels:
+name: vqgan-by-mzj
+channels: # 指定从哪些源（channels）安装软件包
   - pytorch
   - defaults
 dependencies:
@@ -23,3 +23,17 @@ dependencies:
     - more-itertools>=8.0.0
     - transformers==4.3.1
     - -e .
+
+
+
+# conda env create -f environment.yaml
+# 这个命令会自动读取 environment.yaml，创建一个名为 taming 的环境。
+
+# 创建完成后，激活环境：
+# conda activate taming
+
+# ✅ 常用命令备查
+# conda env list	查看已有的环境
+# conda activate taming	进入 taming 环境
+# conda deactivate	退出当前环境
+# conda env remove -n taming	删除名为 taming 的环境
