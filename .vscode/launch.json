@@ -1,0 +1,129 @@
+// {
+//     // 自研调试
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "mzjdebug",
+//             "type": "python",
+//             "request": "attach",
+//             "connect": {
+//                 // "host": "localhost",
+//                 "host": "127.0.0.1",
+//                 "port": 5679,
+//             },
+//         }
+//     ]
+// }
+
+{
+    // 普通vscode无参数调试
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
+
+
+// {
+//     // vqganlc_16384_singlegpu
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python: Current File",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "integratedTerminal",
+//             "args": [
+//                 "--validate_path=./output/vqganlc_16384",
+//                 "--batch_size=4",
+//                 "--epochs=10",
+//                 "--lr=2e-4",
+//                 "--num_workers=8",
+//                 "--mid_channels=320",
+//                 "--inp_channels=80",
+//                 "--out_channels=80",
+//                 "--checkpoint_dir=./checkpoints_vqganlc_16384",
+//                 "--model=VQModel",
+//                 "--save_interval=1000",
+//                 "--val_interval=4000",
+//                 "--n_vision_words=16384",
+//                 "--general_mode=vqgan",
+//                 "--encoder_type=vqgan_lc",
+//                 "--z_channels=4",
+//                 "--vq_config_path=/mnt/bn/occupancy3d/workspace/mzj/mp_pretrain/vqganlc/vqgan_configs/vqganlc_16384.yaml"
+//             ],
+//             "justMyCode": true
+//         }
+//     ]
+// }
+
+// {
+//     // vqganlc_16384_multigpu
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python: Current File",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "/mnt/bn/occupancy3d/workspace/lzy/Occ3d/occ/lib/python3.7/site-packages/torch/distributed/launch.py",
+//             "python": "/usr/bin/python3",
+//             // "program": "${file}", // current file
+//             "args": [
+//                 "--validate_path=./output/vqganlc_16384",
+//                 "--batch_size=4",
+//                 "--epochs=10",
+//                 "--lr=2e-4",
+//                 "--num_workers=8",
+//                 "--mid_channels=320",
+//                 "--inp_channels=80",
+//                 "--out_channels=80",
+//                 "--checkpoint_dir=./checkpoints_vqganlc_16384",
+//                 "--model=VQModel",
+//                 "--save_interval=1000",
+//                 "--val_interval=4000",
+//                 "--n_vision_words=16384",
+//                 "--general_mode=vqgan",
+//                 "--encoder_type=vqgan_lc",
+//                 "--z_channels=4",
+//                 "--vq_config_path=/mnt/bn/occupancy3d/workspace/mzj/mp_pretrain/vqganlc/vqgan_configs/vqganlc_16384.yaml"
+//             ],
+//             "env": {"CUDA_VISIBLE_DEVICES": "0,1,2,3"},
+//         }
+//     ]
+// }
+
+
+// {
+//     // 多机多卡调试
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python: Current File",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "/mnt/bn/occupancy3d/workspace/lzy/Occ3d/occ/lib/python3.7/site-packages/torch/distributed/launch.py",
+//             "python": "/usr/bin/python3",
+//             // "program": "${file}", // current file
+//             "console": "integratedTerminal",
+//             "args":[
+//                 "--nnodes=1",
+//                 "--nproc_per_node=2",
+//                 "--master_port=8008",
+//                 "--master_addr=127.0.0.1",
+//                 "./tools/train.py",
+//                 // "--is_vis"
+//                 // "--model=DiT-XL/2",
+//                 // "--data-path=./path",
+//             ],
+//             "env": {"CUDA_VISIBLE_DEVICES": "0,1"},
+//         }
+//     ]
+// }

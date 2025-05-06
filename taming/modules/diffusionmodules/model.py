@@ -342,7 +342,7 @@ class Model(nn.Module):
 class Encoder(nn.Module):
     def __init__(self, *, ch, out_ch, ch_mult=(1,2,4,8), num_res_blocks,
                  attn_resolutions, dropout=0.0, resamp_with_conv=True, in_channels,
-                 resolution, z_channels, double_z=True, **ignore_kwargs):
+                 resolution, z_channels, double_z=False, **ignore_kwargs):
         super().__init__()
         self.ch = ch
         self.temb_ch = 0
